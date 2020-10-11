@@ -1,0 +1,11 @@
+#####
+# This is an input boolean to use with automations
+# in case we have guests over for visit or sleepovers.
+#
+# https://www.home-assistant.io/components/input_boolean/
+#####
+
+girls_bedtime:
+  name: Girls Bedtime
+  initial: false
+  icon: mdi:bunk-bed-outline

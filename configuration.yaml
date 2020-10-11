@@ -35,15 +35,14 @@ cover: !include cover.yaml
 #octoprint: !include octoprint.yaml
 
 
-input_boolean:
-  front_yard_cameramotion:
-    initial: off
-  disable_automation:
-    initial: off
-  travel_reset:
-    initial: off
-  new_bedtime:
-  girls_bedtime:
+#input_boolean:
+#    initial: off
+#  disable_automation:
+#    initial: off
+#  travel_reset:
+#    initial: off
+#  new_bedtime:
+#  girls_bedtime:
 
 input_select:
   destination:
