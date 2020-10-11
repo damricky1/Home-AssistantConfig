@@ -1,0 +1,6 @@
+
+#
+# Media-Player Config
+#####
+
+media_player: !include_dir_list ../entities/media_player

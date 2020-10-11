@@ -1,0 +1,6 @@
+  # Use the Python ADB implementation
+  platform: androidtv
+  name: "Leila Room firetv AndroidTV"
+  host: 10.0.2.64
+  adb_server_ip: 10.0.2.11
+  adb_server_port: 5037

@@ -1,0 +1,5 @@
+platform: samsungtv
+name: "Living Room TV"
+host: 10.0.2.61
+mac: !secret samsung_mac
+port: 8002

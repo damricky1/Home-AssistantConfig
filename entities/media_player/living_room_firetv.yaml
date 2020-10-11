@@ -1,0 +1,6 @@
+  # Use the Python ADB implementation
+platform: androidtv
+name: "Living Room FireTV AndroidTV"
+host: 10.0.2.65
+adb_server_ip: 10.0.2.11
+adb_server_port: 5037
