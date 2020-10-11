@@ -1,0 +1,7 @@
+substitutions:
+  device_name: front_willow_tree_2
+  device_description: Front Willow Tree 2
+  friendly_name: Front Willow Tree 2
+  static_ip: !secret front_willow_tree_2_ip
+
+<<: !include novoflood_common.yaml

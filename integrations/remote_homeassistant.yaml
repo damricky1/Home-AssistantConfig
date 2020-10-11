@@ -1,0 +1,7 @@
+remote_homeassistant:
+  instances:
+  - host: 10.0.2.11
+    port: 8123
+    access_token: !secret access_token
+    entity_prefix: "pi_"
+    verify_ssl: false

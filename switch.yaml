@@ -1,0 +1,266 @@
+  - platform: mqtt
+    name: "Power Strip Switch 1"
+    command_topic: "cmnd/powerstrip/POWER1"
+    state_topic: "stat/powerstrip/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false  
+  - platform: mqtt
+    name: "Power Strip Switch 2"
+    command_topic: "cmnd/powerstrip/POWER2"
+    state_topic: "stat/powerstrip/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Power Strip USB"
+    command_topic: "cmnd/powerstrip/POWER5"
+    state_topic: "stat/powerstrip/POWER5"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Power Strip Switch 3"
+    command_topic: "cmnd/powerstrip/POWER3"
+    state_topic: "stat/powerstrip/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Power Strip Switch 4"
+    command_topic: "cmnd/powerstrip/POWER4"
+    state_topic: "stat/powerstrip/POWER4"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+  - platform: mqtt
+    name: "garage_door_switch"
+    command_topic: "cmnd/garage_door_shelly/POWER"
+    state_topic: "stat/garage_door_shelly/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    availability_topic: "tele/garage_door_shelly/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+
+
+  - platform: mqtt
+    name: "Fish Tank Light"
+    command_topic: "cmnd/FishTank/POWER1"
+    state_topic: "stat/FishTank/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false  
+
+  - platform: mqtt
+    name: "Fish Tank Pump"
+    command_topic: "cmnd/FishTank/POWER2"
+    state_topic: "stat/FishTank/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Fish Tank USB"
+    command_topic: "cmnd/FishTank/POWER5"
+    state_topic: "stat/FishTank/POWER5"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Fish Tank UV Light"
+    command_topic: "cmnd/FishTank/POWER3"
+    state_topic: "stat/FishTank/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Fish Tank Switch 4"
+    command_topic: "cmnd/FishTank/POWER4"
+    state_topic: "stat/FishTank/POWER4"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+  - platform: mqtt
+    name: "Planter Tree Light 2"
+    command_topic: "cmnd/BackyardSW/POWER1"
+    state_topic: "stat/BackyardSW/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false  
+
+
+  - platform: mqtt
+    name: "Backyard SW 2"
+    command_topic: "cmnd/BackyardSW/POWER2"
+    state_topic: "stat/BackyardSW/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+  - platform: mqtt
+    name: "Backyard Bug Zapper"
+    command_topic: "cmnd/BackyardSW/POWER3"
+    state_topic: "stat/BackyardSW/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+
+  - platform: mqtt
+    name: "Fireplace"
+    command_topic: "cmnd/Fireplace/POWER"
+    state_topic: "stat/Fireplace/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Hallway Switch"
+    command_topic: "cmnd/HallwaySW/POWER"
+    state_topic: "stat/HallwaySW/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+  - platform: mqtt
+    name: "Basement Desk"
+    command_topic: "cmnd/BasementDesk/POWER"
+    state_topic: "stat/BasementDesk/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Basement Entertainment Center"
+    command_topic: "cmnd/BasementEntertainmentSW/POWER"
+    state_topic: "stat/BasementEntertainmentSW/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+  - platform: mqtt
+    name: "3D Printer"
+    command_topic: "cmnd/BasementLamp/POWER"
+    state_topic: "stat/BasementLamp/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+  - platform: mqtt
+    name: "Basement Bathroom Fan"
+    command_topic: "cmnd/BasementBathroomFan/POWER"
+    state_topic: "stat/BasementBathroomFan/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+
+# Circadian Lighting
+  - platform: circadian_lighting
+    name: basement_circadian_lighting
+    lights_ct:
+      - light.basement_led_7
+      - light.pi_basement_lamp
+    lights_rgb:
+      - light.basement_led_1
+      - light.basement_led_2
+      - light.basement_led_3
+      - light.basement_led_4
+      - light.basement_led_5
+      - light.basement_led_6
+    min_brightness: 15
+
+  - platform: circadian_lighting
+    name: master_bedroom
+    lights_ct:
+      - light.amanda_lamp
+      - light.dorian_lamp
+    lights_brightness:
+      - light.master_bedroom_dimmer
+    min_brightness: 15
+
+  - platform: circadian_lighting
+    name: living_room
+    lights_ct:
+        - light.living_room_light
+
+  - platform: circadian_lighting
+    name: common_areas
+    lights_ct:
+      - light.hallway_light_led
+      - light.backhallway_led
+      - light.mudroom_led
+    min_brightness: 15
+
+  - platform: circadian_lighting
+    name: dana_room
+    lights_ct:
+      - light.dana_ceiling_light
+    min_brightness: 15
+
+  - platform: circadian_lighting
+    name: leila_room
+    lights_ct:
+      - light.leila_ceiling_light 
+    min_brightness: 15
+
+  - platform: circadian_lighting
+    name: leila_room
+    lights_ct:
+        - light.leila_ceiling_light 
+
+  - platform: circadian_lighting
+    name: laundry_room
+    lights_ct:
+      - light.pi_laundry_room_lights
+    disable_brightness_adjust: 1
+
+  - platform: circadian_lighting
+    name: main_bathroom
+    lights_brightness:
+      - light.mainbathroomdimmer
+    min_brightness: 20
+
+  - platform: circadian_lighting
+    name: basement_bathroom
+    lights_brightness:
+      - light.pi_basement_bathroom_group
+
+  - platform: circadian_lighting
+    name: kitchen
+    lights_brightness:
+      - light.kitchen_cabinet_lights
+    lights_ct:
+      - light.pi_kitchen_sink_light_hue

@@ -1,0 +1,6 @@
+  - platform: unifi
+    host: unifi.damricky.com
+    port: 443
+    username: !secret unifi_user
+    password: !secret unifi_password
+    verify_ssl: false

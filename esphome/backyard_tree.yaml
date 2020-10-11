@@ -1,0 +1,7 @@
+substitutions:
+  device_name: backyard_tree
+  device_description: 20W RGBWW - Backyard Tree
+  friendly_name: Backyard-Tree
+  static_ip: !secret backyard_tree_ip
+
+<<: !include novoflood_common.yaml

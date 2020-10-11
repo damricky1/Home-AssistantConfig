@@ -1,0 +1,4 @@
+#The wemo integration is the main integration to integrate various Belkin WeMo devices with Home Assistant.
+# https://www.home-assistant.io/integrations/wemo/
+
+wemo:

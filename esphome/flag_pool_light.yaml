@@ -1,0 +1,8 @@
+substitutions:
+  device_name: flag_pole_light
+  device_description: 20W RGBWW flood light, West half of front yard facing the living room.
+  friendly_name: Flag Pole Light
+  static_ip: !secret flag_pole_light_ip
+
+
+<<: !include novoflood_common.yaml

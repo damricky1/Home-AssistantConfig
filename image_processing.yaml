@@ -1,0 +1,10 @@
+  - platform: tensorflow
+    source:
+      - entity_id: camera.kitchen
+    model:
+      graph: /config/tensorflow/model/frozen_inference_graph.pb
+      categories:
+        - category: person
+    file_out:
+      - "/config/www/images/{{ camera_entity.split('.')[1] }}_latest.jpg"
+      - "/config/www/images/{{ camera_entity.split('.')[1] }}_{{ now().strftime('%Y%m%d_%H%M%S') }}.jpg"

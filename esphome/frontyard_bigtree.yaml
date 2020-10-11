@@ -1,0 +1,8 @@
+substitutions:
+  device_name: frontyard_bigtree
+  device_description: 20W RGBWW flood light, West half of front yard facing the living room.
+  friendly_name: Front Yard Big Tree
+  static_ip: !secret frontyard_bigtree_ip
+
+
+<<: !include novoflood_common.yaml

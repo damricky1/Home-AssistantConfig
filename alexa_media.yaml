@@ -1,0 +1,15 @@
+  accounts:
+    - email: !secret amazon_user
+      password: !secret amazon_password
+      url: amazon.com
+      exclude_devices:
+        - "This Device"
+        - "Dorian's Alexa Apps"
+        - "Dorian's Fire"
+        - "Dorian's 4th Fire"
+        - "Dorian's 5th Fire"
+        - "Dorian's Sonos One"
+
+
+
+        

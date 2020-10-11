@@ -1,0 +1,7 @@
+substitutions:
+  device_name: backyard_willow_tree
+  device_description: 20W RGBWW - Backyard Willow Tree
+  friendly_name: backyard_willow-tree
+  static_ip: !secret backyard_willow_tree_ip
+
+<<: !include novoflood_common.yaml

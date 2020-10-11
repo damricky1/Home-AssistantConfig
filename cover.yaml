@@ -1,0 +1,29 @@
+
+  - platform: template
+    covers:
+      garage_door:
+        friendly_name: "Garage Door"
+        value_template: >-
+          {% if is_state('binary_sensor.pi_garage_door_status', 'on') %}
+            open
+          {% else %}
+            closed
+          {% endif %}
+        open_cover:
+          service: switch.turn_on
+          data:
+            entity_id: switch.garage_door_switch
+        close_cover:
+          service: switch.turn_on
+          data:
+            entity_id: switch.garage_door_switch
+        stop_cover:
+          service: switch.turn_on
+          data:
+            entity_id: switch.garage_door_switch
+        icon_template: >-
+          {% if is_state('binary_sensor.pi_garage_door_status', 'on') %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}

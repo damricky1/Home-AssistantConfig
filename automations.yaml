@@ -1,0 +1,203 @@
+- id: '1001'
+  alias: Dryer State - Door
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.dryer_watts
+    above: 7
+    below: 20
+    for:
+      seconds: 2
+  action:
+  - service: mqtt.publish
+    data:
+      topic: Dryer/hass/State
+      payload: Door Open
+      retain: 'true'
+- id: '1002'
+  alias: Dryer State - Drying
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.dryer_watts
+    above: 50
+    for:
+      seconds: 2
+  action:
+  - service: mqtt.publish
+    data:
+      topic: Dryer/hass/State
+      payload: Drying
+      retain: 'true'
+- id: '1003'
+  alias: Dryer State - Idle
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.dryer_watts
+    below: 6
+    for:
+      seconds: 2
+  action:
+  - service: mqtt.publish
+    data:
+      topic: Dryer/hass/State
+      payload: Idle
+      retain: 'true'
+- id: '1004'
+  alias: Washer State - Start
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.washer_watts
+    above: 5
+    for:
+      seconds: 4
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.washer_state.state != ''Washing'' }}'
+  action:
+  - service: mqtt.publish
+    data:
+      topic: Washer/hass/State
+      payload: Washing
+      retain: 'true'
+- id: '1005'
+  alias: Washer State - Idle
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.washer_watts
+    below: 5
+    for:
+      minutes: 5
+  action:
+  - service: mqtt.publish
+    data:
+      topic: Washer/hass/State
+      payload: Idle
+      retain: 'true'
+- id: '1006'
+  alias: Dryer Finished
+  trigger:
+  - entity_id: sensor.dryer_state
+    from: Drying
+    platform: state
+    to: Idle
+  action:
+  - data:
+      entity_id:
+      - media_player.kitchen_display
+      volume_level: '0.50'
+    service: media_player.volume_set
+  - data:
+      message: Hey.. Guess what..  The dryer is done! 
+    entity_id:
+    - media_player.kitchen_display
+    service: tts.google_translate_say
+  - data:
+      message: Dryer is done!
+    service: notify.mobile_app_dorian_iphone_iosapp
+  - data:
+      message: Dryer is done!
+    service: notify.mobile_app_amanda_iphone_iosapp
+  mode: single
+- id: '1007'
+  alias: Washer Finished
+  trigger:
+    platform: state
+    entity_id: sensor.washer_state
+    from: Washing
+    to: Idle
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.dryer_state.state != ''Drying'' }}'
+  action:
+  - service: media_player.volume_set
+    data:
+      entity_id:
+      - media_player.kitchen_display
+      volume_level: '0.50'
+  - service: tts.google_translate_say
+    entity_id:
+    - media_player.kitchen_display
+    data:
+      message: Laundry in the washer can be moved over!
+  - service: notify.mobile_app_dorian_iphone_iosapp
+    data:
+      message: Laundry in the washer can be moved over!
+  - service: notify.mobile_app_amanda_iphone_iosapp
+    data:
+      message: Laundry in the washer can be moved over!
+- id: mqtt_garage_door_status
+  alias: MQTT Garage Door Status
+  trigger:
+    platform: state
+    entity_id: binary_sensor.garage_door_status_contact_2
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: home-assistant/garage/state
+      payload_template: '{{ ''open'' if states.binary_sensor.garage_door_status_contact_2
+        == ''on'' else ''closed'' }}'
+      retain: true
+- alias: Tasmota State on HA Restart
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/backlog
+      payload: 'power1 ;power2 ;power3 ;power4 ;power5; dimmer; state '
+  - service: mqtt.publish
+    data:
+      topic: cmnd/tasmotas/backlog
+      payload: 'power1 ;power2 ;power3 ;power4 ;power5; dimmer; state '
+- alias: clear_mqtt_topic
+  initial_state: 'on'
+  trigger:
+  - platform: state
+    entity_id:
+    - input_text.clear_mqtt_topic
+  condition:
+  - condition: template
+    value_template: '{{ ''homeassistant/sensor/'' in states.input_text.clear_mqtt_topic.state
+      }}'
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: '{{ states.input_text.clear_mqtt_topic.state }}'
+
+- id: '1532478833428'
+  alias: Power State Sonoff on HA Start-Up
+  initial_state: "on"
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/power1
+      payload: ''
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/power2
+      payload: ''
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/Power3
+      payload: ''
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/power4
+      payload: ''
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/power
+      payload: ''
+
+# Opensky
+- alias: 'Flight entry notification'
+  trigger:
+    platform: event
+    event_type: opensky_entry
+  action:
+    service: notify.mobile_app_dorian_iphone_iosapp
+    data:
+      message: 'Flight entry of {{ trigger.event.data.callsign }}'

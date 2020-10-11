@@ -1,0 +1,16 @@
+hottub_daily_energy:
+  source: sensor.pewaukee_house_energy_total_hot_tub_kwh
+  cycle: daily
+
+hottub_monthly_energy:
+  source: sensor.pewaukee_house_energy_total_hot_tub_kwh
+  cycle: monthly
+
+
+house_daily_energy:
+  source: sensor.pewaukee_house_energy_total_kwh
+  cycle: daily
+
+house_monthly_energy:
+  source: sensor.pewaukee_house_energy_total_kwh
+  cycle: monthly

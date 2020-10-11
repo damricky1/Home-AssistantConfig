@@ -1,0 +1,6 @@
+cover.garage_door:
+  device_class: garage
+
+  light.basement_ceiling_lights:
+    friendly_name: " Basement Ceiling Lights"
+    icon: mdi:ceiling-light

@@ -1,0 +1,151 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Pewaukee_Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+  customize: !include customize.yaml
+  packages: !include_dir_named integrations
+
+
+#frontend:
+#  themes: !include_dir_merge_named themes
+  
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+#http:
+#  base_url: https://10.0.2.10:8123
+
+# Discover some devices automatically
+# discovery:
+# ios
+# ios: 
+
+#wemo:
+
+#speedtestdotnet:
+
+# Sensors
+sensor: !include sensor.yaml
+
+# Text to speech
+#tts:
+#  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+switch: !include switch.yaml
+light: !include light.yaml
+#device_tracker: !include device_tracker.yaml
+#alexa_media: !include alexa_media.yaml
+#media_player: !include media_player.yaml
+binary_sensor: !include binary_sensor.yaml
+insteon: !include insteon.yaml
+cover: !include cover.yaml
+#octoprint: !include octoprint.yaml
+
+
+
+#remote:
+#  - platform: harmony
+#    name: Living Room
+#    host: 10.0.2.168
+    
+#stream:
+
+input_boolean:
+  front_yard_cameramotion:
+    initial: off
+  disable_automation:
+    initial: off
+  travel_reset:
+    initial: off
+  new_bedtime:
+  girls_bedtime:
+
+input_select:
+  destination:
+    name: destination
+    options:
+      - Home
+      - Kohls
+      - Baird
+      - School
+
+input_text:
+  clear_mqtt_topic:
+    name: MQTT Topic to Clear
+    mode: text
+    initial: ''
+
+
+
+
+#influxdb:
+#  host: localhost
+#  port: 8086
+#  database: homeassistant
+#  username: !secret influx_user
+#  password: !secret influx_pwd
+#  max_retries: 3
+#  default_measurement: state
+
+#remote_homeassistant:
+#  instances:
+#  - host: 10.0.2.11
+#    port: 8123
+#    access_token: !secret access_token
+#    entity_prefix: "pi_"
+#    verify_ssl: false
+
+#vesync:
+#  username: !secret vesync_username
+#  password: !secret vesync_password
+
+#recorder:
+#  purge_keep_days: 3
+#  purge_interval: 1
+#  db_url: !secret db_url
+#  exclude:
+#    entities:
+#      - sensor.valetudo_map
+
+#ifttt:
+#  key: !secret ifttt_key
+
+
+#circadian_lighting:
+
+#logger:
+#  default: warn
+
+#utility_meter: !include utility_meter.yaml
+
+#system_health:
+    
+# Example configuration.yaml entry
+
+#image_processing: !include image_processing.yaml
+
+
+
+# Migrated to Integration Folder
+# Configure a default setup of Home Assistant (frontend, api, etc)
+# default_config:
+
+
+#frontend:
+ #   themes: !include_dir_merge_named themes
+
+# 
+
+
+
