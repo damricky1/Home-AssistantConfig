@@ -1,0 +1,7 @@
+destination:
+  name: destination
+  options:
+    - Home
+    - Kohls
+    - Baird
+    - School

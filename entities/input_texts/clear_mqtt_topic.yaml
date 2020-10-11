@@ -1,0 +1,4 @@
+clear_mqtt_topic:
+  name: MQTT Topic to Clear
+  mode: text
+  initial: ''

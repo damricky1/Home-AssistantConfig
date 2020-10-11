@@ -20,9 +20,6 @@ homeassistant:
 
 # Sensors
 sensor: !include sensor.yaml
-
-
-
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
@@ -33,31 +30,6 @@ binary_sensor: !include binary_sensor.yaml
 insteon: !include insteon.yaml
 cover: !include cover.yaml
 #octoprint: !include octoprint.yaml
-
-
-#input_boolean:
-#    initial: off
-#  disable_automation:
-#    initial: off
-#  travel_reset:
-#    initial: off
-#  new_bedtime:
-#  girls_bedtime:
-
-input_select:
-  destination:
-    name: destination
-    options:
-      - Home
-      - Kohls
-      - Baird
-      - School
-
-input_text:
-  clear_mqtt_topic:
-    name: MQTT Topic to Clear
-    mode: text
-    initial: ''
 
 
 
