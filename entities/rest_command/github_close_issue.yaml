@@ -1,0 +1,11 @@
+#####
+# RESTful command to close issue based on issue_number
+#
+#####
+
+github_close_issue:
+  url: "https://api.github.com/repos/damricky1/Home-AssistantConfig/issues/{{ issue_number }}"
+  method: POST
+  headers:
+    Authorization: !secret github_token
+  payload: '{"state":"closed"}'

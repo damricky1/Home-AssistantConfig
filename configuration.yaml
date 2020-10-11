@@ -22,15 +22,18 @@ homeassistant:
 sensor: !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
-script: !include scripts.yaml
+
 switch: !include switch.yaml
 light: !include light.yaml
 
 binary_sensor: !include binary_sensor.yaml
-insteon: !include insteon.yaml
 cover: !include cover.yaml
-#octoprint: !include octoprint.yaml
 
+
+
+#octoprint: !include octoprint.yaml
+#insteon: !include insteon.yaml
+#script: !include scripts.yaml
 
 
 

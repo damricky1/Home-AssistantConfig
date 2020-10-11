@@ -720,3 +720,10 @@
    #   - windChill
    #   - humidity
 
+  - platform: version
+    name: homeassistant_version_available
+    source: hassio
+
+  - platform: version
+    name: homeassistant_current_version
+    source: local

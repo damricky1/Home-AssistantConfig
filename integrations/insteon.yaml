@@ -1,0 +1,6 @@
+insteon: 
+  host: !secret insteon_host
+  ip_port: 25105
+  username: !secret insteon_user
+  password: !secret insteon_pwd
+  hub_version: 2

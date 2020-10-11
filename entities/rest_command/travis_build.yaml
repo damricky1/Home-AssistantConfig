@@ -1,0 +1,14 @@
+#####
+# Travis CI build
+#
+####
+
+travis_build:
+  url: https://api.travis-ci.org/repo/damricky1%2FHome-AssistantConfig/requests
+  method: POST
+  headers:
+    authorization: !secret travis_api_key
+    Content-Type: "application/json"
+    Accept: "application/json"
+    Travis-API-Version: 3
+  payload: '{"request": {"branch":"master"}}'

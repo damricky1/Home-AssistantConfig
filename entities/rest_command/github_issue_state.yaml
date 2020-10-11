@@ -1,0 +1,11 @@
+#####
+# RESTful command to change state to the issue based on issue_number
+#
+#####
+
+github_issue_state:
+  url: "https://api.github.com/repos/damricky1/Home-AssistantConfig/issues/{{issue_number}}"
+  method: POST
+  headers:
+    Authorization: !secret github_token
+  payload: '{ "state":"{{ status }}" }'

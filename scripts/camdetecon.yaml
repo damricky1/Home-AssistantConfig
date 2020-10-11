@@ -1,0 +1,8 @@
+camdetecon:
+  alias: booleanopen
+  sequence:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.front_yard_cameramotion
+  - delay: 00:00:30
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.front_yard_cameramotion
