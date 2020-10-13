@@ -1,0 +1,6 @@
+platform: waze_travel_time
+name: "Me to destination"
+origin: zone.Home
+destination: sensor.dest_address
+region: 'US'
+

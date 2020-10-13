@@ -1,0 +1,4 @@
+platform: mqtt
+name: "LivingRoomPlug State"
+state_topic: "LivingRoomPlug/hass/State"
+icon: mdi:washing-machine

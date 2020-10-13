@@ -1,0 +1,9 @@
+platform: mqtt
+name: "LivingRoomPlug Energy Today"
+state_topic: "LivingRoomPlug/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Today }}"
+qos: 2
+unit_of_measurement : "kWh"
+availability_topic: "LivingRoomPlug/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

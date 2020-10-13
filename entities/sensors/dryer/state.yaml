@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Dryer State"
+state_topic: "Dryer/hass/State"
+icon: mdi:dryer

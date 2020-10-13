@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Fireplace State"
+state_topic: "Fireplace/hass/State"
+icon: mdi:fireplace

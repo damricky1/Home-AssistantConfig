@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Garage State"
+state_topic: "home-assistant/garage/state"
+icon: mdi:garage

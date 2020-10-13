@@ -1,0 +1,10 @@
+platform: mqtt
+name: "LivingRoomPlug Amps"
+state_topic: "LivingRoomPlug/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Current }}"
+qos: 2
+unit_of_measurement : "A"
+icon: mdi:flash-circle
+availability_topic: "LivingRoomPlug/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

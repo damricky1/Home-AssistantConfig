@@ -1,0 +1,4 @@
+platform: mqtt
+name: "BasementDesk State"
+state_topic: "BasementDesk/hass/State"
+icon: mdi:desk

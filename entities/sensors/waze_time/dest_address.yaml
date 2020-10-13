@@ -1,0 +1,16 @@
+platform: template
+sensors:
+  dest_address:
+    value_template: >-
+        {%- if is_state("input_select.destination", "Home")  -%}
+          w226n290 Mount Vernon Dr, Pewaukee, WI 53186, USA
+        {%- elif is_state("input_select.destination", "Dominican")  -%}
+          120 E Silver Spring Dr, Whitefish Bay, WI 53217
+        {%- elif is_state("input_select.destination", "St Roberts")  -%}
+          2200 E Capitol Dr, Shorewood, WI 53211, USA
+        {%- elif is_state("input_select.destination", "NM")  -%}
+          720 E Wisconsin Ave, Milwaukee, WI 53202, USA
+        {%- else -%}
+          Unknown
+        {%- endif %}
+

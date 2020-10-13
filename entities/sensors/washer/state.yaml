@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Washer State"
+state_topic: "Washer/hass/State"
+icon: mdi:washing-machine

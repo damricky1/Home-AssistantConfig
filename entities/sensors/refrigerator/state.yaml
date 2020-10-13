@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Refrigerator State"
+state_topic: "Refrigerator/hass/State"
+icon: mdi:fridge

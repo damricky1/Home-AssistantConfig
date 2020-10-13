@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Microwave State"
+state_topic: "Microwave/hass/State"
+icon: mdi:microwave

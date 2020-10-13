@@ -1,0 +1,6 @@
+platform: travisci
+api_key: !secret github_token_travisci
+monitored_conditions:
+  - state
+  - last_build_state
+  - last_build_finished_at

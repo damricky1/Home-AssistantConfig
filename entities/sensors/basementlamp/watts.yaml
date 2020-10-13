@@ -1,0 +1,10 @@
+platform: mqtt
+name: "BasementLamp Watts"
+state_topic: "BasementLamp/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Power }}"
+qos: 2
+unit_of_measurement : "W"
+icon: mdi:flash-circle
+availability_topic: "BasementLamp/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

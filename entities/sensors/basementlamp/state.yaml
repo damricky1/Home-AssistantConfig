@@ -1,0 +1,4 @@
+platform: mqtt
+name: "BasementLamp State"
+state_topic: "BasementLamp/hass/State"
+icon: mdi:lamp

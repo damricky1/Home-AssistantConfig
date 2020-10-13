@@ -1,0 +1,7 @@
+platform: waze_travel_time
+name: "Home to NM"
+origin: zone.Home
+destination: "720 E Wisconsin Ave, Milwaukee, WI 53202"
+region: 'US'
+units: imperial    # 'metric' for Metric, 'imperial' for Imperial
+vehicle_type: car  # vehicle type used for routing

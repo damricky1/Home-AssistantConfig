@@ -1,0 +1,10 @@
+platform: mqtt
+name: "BasementEntertainmentSW Amps"
+state_topic: "BasementEntertainmentSW/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Current }}"
+qos: 2
+unit_of_measurement : "A"
+icon: mdi:flash-circle
+availability_topic: "BasementEntertainmentSW/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

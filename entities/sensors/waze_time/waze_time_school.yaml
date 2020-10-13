@@ -1,0 +1,7 @@
+platform: waze_travel_time
+name: "Home to St Roberts"
+origin: zone.Home
+destination: "2200 E Capitol Dr, Shorewood, WI 53211, USA"
+region: 'US'
+units: imperial    # 'metric' for Metric, 'imperial' for Imperial
+vehicle_type: car  # vehicle type used for routing

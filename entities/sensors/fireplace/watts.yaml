@@ -1,0 +1,10 @@
+platform: mqtt
+name: "Fireplace Watts"
+state_topic: "Fireplace/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Power }}"
+qos: 2
+unit_of_measurement : "W"
+icon: mdi:flash-circle
+availability_topic: "Fireplace/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

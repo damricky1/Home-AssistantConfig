@@ -1,0 +1,10 @@
+platform: mqtt
+name: "BasementLamp Voltage"
+state_topic: "BasementLamp/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Voltage }}"
+qos: 2
+unit_of_measurement : "V"
+icon: mdi:flash-circle
+availability_topic: "BasementLamp/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

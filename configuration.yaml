@@ -19,7 +19,7 @@ homeassistant:
 
 
 # Sensors
-sensor: !include sensor.yaml
+#sensor: !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 

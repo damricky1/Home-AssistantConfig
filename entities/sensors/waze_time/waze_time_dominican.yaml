@@ -1,0 +1,7 @@
+platform: waze_travel_time
+name: "Home to Dominican"
+origin: zone.Home
+destination: "120 E Silver Spring Dr, Whitefish Bay, WI 53217"
+region: 'US'
+units: imperial    # 'metric' for Metric, 'imperial' for Imperial
+vehicle_type: car  # vehicle type used for routing

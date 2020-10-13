@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Fireplace Energy Today"
+state_topic: "Fireplace/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Today }}"
+qos: 2
+unit_of_measurement : "kWh"
+availability_topic: "Fireplace/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

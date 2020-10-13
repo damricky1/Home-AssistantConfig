@@ -1,0 +1,10 @@
+platform: mqtt
+name: "Fireplace Amps"
+state_topic: "Fireplace/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Current }}"
+qos: 2
+unit_of_measurement : "A"
+icon: mdi:flash-circle
+availability_topic: "Fireplace/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

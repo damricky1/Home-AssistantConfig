@@ -1,0 +1,4 @@
+platform: mqtt
+name: "BasementEntertainmentSW State"
+state_topic: "BasementEntertainmentSW/hass/State"
+icon: mdi:television

@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Microwave Energy Yesterday"
+state_topic: "Microwave/tele/SENSOR"
+value_template: "{{value_json['ENERGY'].Yesterday }}"
+qos: 2
+unit_of_measurement : "kWh"
+availability_topic: "Microwave/tele/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
