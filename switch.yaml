@@ -264,3 +264,40 @@
       - light.kitchen_cabinet_lights
     lights_ct:
       - light.pi_kitchen_sink_light_hue
+
+  - platform: mqtt
+    name: "Garden Power Strip Switch 1"
+    command_topic: "cmnd/indoor_garden_plug/POWER1"
+    state_topic: "stat/indoor_garden_plug/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false  
+
+  - platform: mqtt
+    name: "Garden Power Strip Switch 2"
+    command_topic: "cmnd/indoor_garden_plug/POWER2"
+    state_topic: "stat/indoor_garden_plug/POWER2"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Garden Power Strip USB"
+    command_topic: "cmnd/indoor_garden_plug/POWER4"
+    state_topic: "stat/indoor_garden_plug/POWER4"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+
+  - platform: mqtt
+    name: "Garden Power Strip Switch 3"
+    command_topic: "cmnd/indoor_garden_plug/POWER3"
+    state_topic: "stat/indoor_garden_plug/POWER3"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+    

@@ -150,7 +150,7 @@
       topic: cmnd/tasmotas/backlog
       payload: 'power1 ;power2 ;power3 ;power4 ;power5; dimmer; state '
 - alias: clear_mqtt_topic
-  initial_state: 'on'
+  initial_state: true
   trigger:
   - platform: state
     entity_id:
@@ -166,7 +166,7 @@
 
 - id: '1532478833428'
   alias: Power State Sonoff on HA Start-Up
-  initial_state: "on"
+  initial_state: true
   trigger:
     platform: homeassistant
     event: start

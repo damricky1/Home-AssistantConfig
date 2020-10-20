@@ -1,0 +1,14 @@
+alias: clear_mqtt_topic
+initial_state: true
+trigger:
+- platform: state
+  entity_id:
+  - input_text.clear_mqtt_topic
+condition:
+- condition: template
+  value_template: '{{ ''homeassistant/sensor/'' in states.input_text.clear_mqtt_topic.state
+    }}'
+action:
+- service: mqtt.publish
+  data_template:
+    topic: '{{ states.input_text.clear_mqtt_topic.state }}'

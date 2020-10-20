@@ -1,0 +1,8 @@
+alias: 'Flight entry notification'
+trigger:
+  platform: event
+  event_type: opensky_entry
+action:
+  service: notify.mobile_app_dorian_iphone_iosapp
+  data:
+    message: 'Flight entry of {{ trigger.event.data.callsign }}'

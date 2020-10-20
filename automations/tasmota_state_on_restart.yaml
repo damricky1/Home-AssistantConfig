@@ -1,0 +1,14 @@
+alias: Tasmota State on HA Restart
+trigger:
+  platform: homeassistant
+  event: start
+action:
+- service: mqtt.publish
+  data:
+    topic: cmnd/sonoffs/backlog
+    payload: 'power1 ;power2 ;power3 ;power4 ;power5; dimmer; state '
+- service: mqtt.publish
+  data:
+    topic: cmnd/tasmotas/backlog
+    payload: 'power1 ;power2 ;power3 ;power4 ;power5; dimmer; state '
+

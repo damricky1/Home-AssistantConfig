@@ -1,0 +1,27 @@
+id: '1532478833428'
+alias: Power State Sonoff on HA Start-Up
+initial_state: "on"
+trigger:
+  platform: homeassistant
+  event: start
+action:
+- service: mqtt.publish
+  data:
+    topic: cmnd/sonoffs/power1
+    payload: ''
+- service: mqtt.publish
+  data:
+    topic: cmnd/sonoffs/power2
+    payload: ''
+- service: mqtt.publish
+  data:
+    topic: cmnd/sonoffs/Power3
+    payload: ''
+- service: mqtt.publish
+  data:
+    topic: cmnd/sonoffs/power4
+    payload: ''
+- service: mqtt.publish
+  data:
+    topic: cmnd/sonoffs/power
+    payload: ''

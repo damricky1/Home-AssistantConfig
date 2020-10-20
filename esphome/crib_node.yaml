@@ -1,7 +1,8 @@
 esphome:
   name: crib_node
-  platform: ESP8266
-  board: nodemcuv2
+  platform: ESP32
+  board: esp32doit-devkit-v1
+
 
 wifi:
   ssid: !secret wifissid
@@ -27,8 +28,29 @@ ota:
 web_server:
   port: 80
 
+#esp32_ble_tracker:
 
+i2c:
+  sda: 21
+  scl: 22
+  scan: True
+  id: bus_a
+  
 sensor:
+
+
+  - platform: ccs811
+    eco2:
+      name: "CCS811 eCO2 Value"
+    tvoc:
+      name: "CCS811 Total Volatile Organic Compound"
+    address: 0x5A
+    update_interval: 60s
+
+  - platform: bh1750
+    name: "Crib Illuminance"
+    measurement_time: 69
+    update_interval: 60s
 
   - platform: wifi_signal
     name: Crib WiFi
@@ -38,8 +60,8 @@ sensor:
   - platform: hx711
     name: "crib weight"
     id: crib_weight
-    dout_pin: D1
-    clk_pin: D2
+    dout_pin: GPIO25
+    clk_pin: GPIO26
     gain: 128
     filters:
       - calibrate_linear:
@@ -48,7 +70,7 @@ sensor:
       - sliding_window_moving_average:
           window_size: 5
           send_every: 5
-    update_interval: 2s
+    update_interval: 60s
     unit_of_measurement: kg
     accuracy_decimals: 2
     

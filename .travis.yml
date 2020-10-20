@@ -3,6 +3,7 @@ python:
 - "3.7"
 before_install:
 - mv travis_secrets.yaml secrets.yaml
+- rm integration/spotcheck.yaml
 - sudo apt-get install -y libudev-dev
 install:
 - pip3 install homeassistant

@@ -1,0 +1,12 @@
+id: mqtt_garage_door_status
+alias: MQTT Garage Door Status
+trigger:
+platform: state
+entity_id: binary_sensor.garage_door_status_contact_2
+action:
+- service: mqtt.publish
+data_template:
+    topic: home-assistant/garage/state
+    payload_template: '{{ ''open'' if states.binary_sensor.garage_door_status_contact_2
+    == ''on'' else ''closed'' }}'
+    retain: true
