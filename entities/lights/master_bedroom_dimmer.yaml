@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Master Bedroom Dimmer"
+state_topic: "stat/masterbedroomdimmer/POWER"
+command_topic: "cmnd/masterbedroomdimmer/POWER"
+availability_topic: "tele/masterbedroomdimmer/LWT"
+brightness_state_topic: "stat/masterbedroomdimmer/RESULT"
+brightness_command_topic: "cmnd/masterbedroomdimmer/Dimmer"
+brightness_scale: 100
+brightness_value_template: "{{ value_json.Dimmer }}"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false

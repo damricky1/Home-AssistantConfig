@@ -1,0 +1,34 @@
+platform: mqtt
+name: "Basement Led 4"
+command_topic: "cmnd/BasementLed4/POWER"
+state_topic: "tele/BasementLed4/STATE"
+state_value_template: "{{value_json.POWER}}"
+availability_topic: "tele/BasementLed4/LWT"
+brightness_command_topic: "cmnd/BasementLed4/Dimmer"
+brightness_state_topic: "tele/BasementLed4/STATE"
+brightness_scale: 100
+
+on_command_type: "brightness"
+brightness_value_template: "{{value_json.Dimmer}}"
+white_value_state_topic: "tele/BasementLed4/STATE"
+white_value_command_topic: "cmnd/BasementLed4/white"
+white_value_scale: 100
+white_value_template: "{{ value_json.Channel[3] }}"
+rgb_command_topic: "cmnd/BasementLed4/Color2"
+rgb_state_topic: "tele/BasementLed4/STATE"
+rgb_value_template: "{{value_json.Color.split(',')[0:3]|join(',')}}"
+effect_command_topic: "cmnd/BasementLed4/Scheme"
+effect_state_topic: "tele/BasementLed4/STATE"
+effect_value_template: "{{value_json.Scheme}}"
+effect_list:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false  

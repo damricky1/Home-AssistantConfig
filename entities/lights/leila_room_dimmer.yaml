@@ -1,0 +1,15 @@
+platform: mqtt
+name: "Leila Room Dimmer"
+state_topic: "stat/LeilaRoomDimmer/POWER"
+command_topic: "cmnd/LeilaRoomDimmer/POWER"
+availability_topic: "tele/LeilaRoomDimmer/LWT"
+brightness_state_topic: "stat/LeilaRoomDimmer/RESULT"
+brightness_command_topic: "cmnd/LeilaRoomDimmer/Dimmer"
+brightness_scale: 100
+brightness_value_template: "{{ value_json.Dimmer }}"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false

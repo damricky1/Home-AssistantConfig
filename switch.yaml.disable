@@ -6,6 +6,7 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: false  
+  
   - platform: mqtt
     name: "Power Strip Switch 2"
     command_topic: "cmnd/powerstrip/POWER2"
@@ -14,6 +15,8 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: false
+
+  
   - platform: mqtt
     name: "Power Strip USB"
     command_topic: "cmnd/powerstrip/POWER5"
@@ -22,6 +25,8 @@
     payload_on: "ON"
     payload_off: "OFF"
     retain: false
+
+
   - platform: mqtt
     name: "Power Strip Switch 3"
     command_topic: "cmnd/powerstrip/POWER3"

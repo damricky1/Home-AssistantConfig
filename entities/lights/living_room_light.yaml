@@ -1,0 +1,6 @@
+platform: group
+name: Living Room Light
+entities:
+  - light.pi_living_room_kitchen
+  - light.pi_living_room_window
+  - light.pi_dining_room_lamp_hue

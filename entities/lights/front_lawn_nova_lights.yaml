@@ -1,0 +1,6 @@
+platform: group
+name: Front Lawn Nova Lights
+entities:
+  - light.front_willow_tree_2
+  - light.front_yard_big_tree
+  - light.willow_tree_light_esp

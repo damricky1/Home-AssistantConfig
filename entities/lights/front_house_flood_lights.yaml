@@ -1,0 +1,5 @@
+platform: group
+name: Front House Flood Lights
+entities:
+  - light.outside_front_garage
+  - light.front_door_led

@@ -1,0 +1,5 @@
+platform: group
+name: Laundry Room Light
+entities:
+  - light.pi_laundry_room_light_1_hue
+  - light.pi_laundry_room_light_2_hue

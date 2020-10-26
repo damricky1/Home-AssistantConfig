@@ -28,29 +28,32 @@ ota:
 web_server:
   port: 80
 
-#esp32_ble_tracker:
+esp32_ble_tracker:
 
 i2c:
-  sda: 21
-  scl: 22
+  sda: GPIO21
+  scl: GPIO22
   scan: True
   id: bus_a
   
 sensor:
 
-
-  - platform: ccs811
-    eco2:
-      name: "CCS811 eCO2 Value"
-    tvoc:
-      name: "CCS811 Total Volatile Organic Compound"
-    address: 0x5A
-    update_interval: 60s
+  - platform: bme280
+    temperature:
+      name: "Crib Temperature"
+      oversampling: 16x
+    pressure:
+      name: "Crib Pressure"
+    humidity:
+      name: "Crib Humidity"
+    address: 0x76
+    update_interval: 5s
+ 
 
   - platform: bh1750
     name: "Crib Illuminance"
     measurement_time: 69
-    update_interval: 60s
+    update_interval: 10s
 
   - platform: wifi_signal
     name: Crib WiFi
@@ -60,17 +63,17 @@ sensor:
   - platform: hx711
     name: "crib weight"
     id: crib_weight
-    dout_pin: GPIO25
-    clk_pin: GPIO26
-    gain: 128
+    dout_pin: GPIO19
+    clk_pin: GPIO18
+    gain: 64
     filters:
       - calibrate_linear:
-          - 2248 -> 0
-          - 7248 -> 5.6
+          - 143041 -> 0
+          - 146041 -> 1.0
       - sliding_window_moving_average:
           window_size: 5
           send_every: 5
-    update_interval: 60s
+    update_interval: 5s
     unit_of_measurement: kg
     accuracy_decimals: 2
     

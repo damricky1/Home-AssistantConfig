@@ -1,0 +1,5 @@
+platform: group
+name: Basement Bathroom Light
+entities:
+  - light.pi_basement_bathroom_light_1_ha
+  - light.pi_basement_bathroom_light_2_ha

@@ -1,0 +1,5 @@
+Master_Bedroom_Lamps:
+  name: Master_Bedroom_Lamps
+  entities:
+     - light.amanda_lamp
+     - light.dorian_lamp

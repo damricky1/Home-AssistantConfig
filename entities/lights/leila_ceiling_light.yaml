@@ -1,0 +1,33 @@
+platform: mqtt
+name: "Leila Ceiling Light"
+command_topic: "cmnd/LeilaRoomLED/POWER"
+state_topic: "tele/LeilaRoomLED/STATE"
+state_value_template: "{{value_json.POWER}}"
+availability_topic: "tele/LeilaRoomLED/LWT"
+brightness_command_topic: "cmnd/LeilaRoomLED/Dimmer"
+brightness_state_topic: "tele/LeilaRoomLED/STATE"
+brightness_scale: 100
+on_command_type: "brightness"
+brightness_value_template: "{{value_json.Dimmer}}"
+white_value_state_topic: "tele/LeilaRoomLED/STATE"
+white_value_command_topic: "cmnd/LeilaRoomLED/white"
+white_value_scale: 100
+white_value_template: "{{ value_json.Channel[3] }}"
+rgb_command_topic: "cmnd/LeilaRoomLED/Color2"
+rgb_state_topic: "tele/LeilaRoomLED/STATE"
+rgb_value_template: "{{value_json.Color.split(',')[0:3]|join(',')}}"
+effect_command_topic: "cmnd/LeilaRoomLED/Scheme"
+effect_state_topic: "tele/LeilaRoomLED/STATE"
+effect_value_template: "{{value_json.Scheme}}"
+effect_list:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false 

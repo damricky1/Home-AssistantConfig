@@ -1,0 +1,6 @@
+platform: mqtt
+name: "Backyard Motion"
+device_class: motion
+state_topic: "BI/AI/Backyard"
+payload_on: "Backyard"
+off_delay: 30

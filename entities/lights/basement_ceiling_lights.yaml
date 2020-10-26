@@ -1,0 +1,10 @@
+platform: group
+name: Basement Ceiling Lights
+entities:
+  - light.basement_led_1
+  - light.basement_led_2
+  - light.basement_led_3
+  - light.basement_led_4
+  - light.basement_led_5
+  - light.basement_led_6
+  - light.basement_led_7

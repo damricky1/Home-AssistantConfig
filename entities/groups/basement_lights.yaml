@@ -1,0 +1,10 @@
+Basement_Lights:
+  name: Basement_Lights
+  entities:
+     - light.basement_bar_left_color
+     - light.basement_bar_center_color
+     - light.basement_bar_right_color
+     - light.basement_light_1_color
+     - light.basement_light_2_color
+     - light.basement_light_3_color
+     - light.basement_light_4_color    

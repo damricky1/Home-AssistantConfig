@@ -1,0 +1,8 @@
+Adults_Presence:
+  name: Adults_Presence
+  entities:
+    - person.amanda_schroeder
+    - person.dorian_mcfarlane
+    - person.erik_schroeder
+
+

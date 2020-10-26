@@ -1,0 +1,7 @@
+Basement_Motion:
+  name: Basement_Motion
+  entities:
+     - binary_sensor.pi_basement_motion_sensor_1
+     - binary_sensor.pi_basement_motion_sensor_2
+     - binary_sensor.pi_basement_motion_sensor_3
+     - binary_sensor.pi_basement_motion_sensor_4

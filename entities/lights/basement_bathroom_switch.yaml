@@ -1,0 +1,8 @@
+platform: mqtt
+name: "Basement Bathroom Switch"
+command_topic: "cmnd/BasementBathroomSW/POWER"
+state_topic: "stat/BasementBathroomSW/POWER"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+retain: false

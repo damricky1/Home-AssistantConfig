@@ -1,0 +1,9 @@
+BasementEntertainmentSwitch:
+  name: BasementEntertainment
+  entities:
+    - sensor.basemententertainmentsw_voltage
+    - sensor.basemententertainmentsw_watts
+    - sensor.basemententertainmentsw_amps
+    - sensor.basemententertainmentsw_energy_today
+    - sensor.basemententertainmentsw_energy_yesterday
+    - sensor.basemententertainmentsw_signal

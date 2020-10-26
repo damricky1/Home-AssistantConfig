@@ -1,0 +1,5 @@
+platform: group
+name: Backyard Lawn Nova Lights
+entities:
+  - light.backyard_tree
+  - light.backyard_willow_tree

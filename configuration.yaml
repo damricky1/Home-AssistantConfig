@@ -20,11 +20,11 @@ homeassistant:
 
 # Sensors
 
-group: !include groups.yaml
+
 switch: !include switch.yaml
-light: !include light.yaml
-binary_sensor: !include binary_sensor.yaml
-cover: !include cover.yaml
+
+
+
 
 
 
@@ -33,6 +33,9 @@ cover: !include cover.yaml
 #script: !include scripts.yaml
 automation: !include automations.yaml
 #sensor: !include sensor.yaml
-
+#light: !include light.yaml
+#binary_sensor: !include binary_sensor.yaml
+#group: !include groups.yaml
+#cover: !include cover.yaml
 
 
